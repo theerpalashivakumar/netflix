@@ -11,6 +11,7 @@ import { auth } from "../utils/firebase";
 // import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { profile_avatar } from "../utils/consonent";
 
 const Login = () => {
   const [isSingIn, setIsSingIn] = useState(true);
@@ -53,8 +54,8 @@ const Login = () => {
           console.log(user);
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL:
-              "https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp",
+            photoURL:profile_avatar
+              
           })
             .then(() => {
               // Profile updated!
