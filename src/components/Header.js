@@ -50,7 +50,7 @@ const Header = () => {
     return () => unsubscribe();
   }, []);
   return (
-    <div className="absolute z-40 bg-gradient-to-b from-black w-full flex justify-between items-center px-5">
+    <div className="absolute z-40 bg-gradient-to-b from-black w-full flex justify-between items-center px-5 py-0">
       <img src={logo} alt="headLogo" className="h-20 w-40 " />
       {user && (
         <div>

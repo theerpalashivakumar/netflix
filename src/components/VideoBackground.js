@@ -17,17 +17,18 @@ const VideoBackground = ({ movieId }) => {
     return <div>No trailer available</div>;
   }
 
-  const videoUrl = `https://www.youtube.com/embed/${video?.key}?si=Lq2Lb9UT32lT_pra`;
+  const videoUrl = `https://www.youtube.com/embed/${video?.key}?autoplay=1&mute=1`;
 
   return (
-    <div className="">
+    <div className="w-screen aspect-video ">
       <iframe
-       
+      //it is set to aspect ration for video
+      className="w-screen aspect-video"
         src={videoUrl}
-        // title="YouTube video player"
-        // frameBorder="0"
-        // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        // referrerPolicy="strict-origin-when-cross-origin"
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerPolicy="strict-origin-when-cross-origin"
         ></iframe>
     </div>
   );
