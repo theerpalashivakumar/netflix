@@ -6,6 +6,8 @@ import Header from "./Header";
 import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
 import MainContainer from "./MainContainer";
 import SecondaryContainer from "./SecondaryContainer";
+import useGetPopularVideo from "../hooks/useGetPopularVideo";
+import useTopRatedVideos from "../hooks/useTopRatedVideos";
 
 const Browse = () => {
   // const dispatch = useDispatch()
@@ -23,6 +25,8 @@ const Browse = () => {
   // }, []);
 
   useNowPlayingMovies()
+  useGetPopularVideo()
+  useTopRatedVideos()
 
   return (
     <div >
