@@ -2,9 +2,22 @@ import React from "react";
 import useGetVideo from "../hooks/useGetVideo";
 
 const VideoBackground = ({ movieId }) => {
-  const {getVideo,loading,error}=useGetVideo(movieId);
-  console.log(getVideo)
-  const videoUrl = `https://www.youtube.com/embed/${getVideo?.key}?si=Lq2Lb9UT32lT_pra`;
+  const {video,loading,error}=useGetVideo(movieId);
+  console.log(video)
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  if (!video) {
+    return <div>No trailer available</div>;
+  }
+
+  const videoUrl = `https://www.youtube.com/embed/${video?.key}?si=Lq2Lb9UT32lT_pra`;
 
   return (
     <div className="">
