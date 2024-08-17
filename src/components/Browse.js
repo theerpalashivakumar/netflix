@@ -8,6 +8,8 @@ import MainContainer from "./MainContainer";
 import SecondaryContainer from "./SecondaryContainer";
 import useGetPopularVideo from "../hooks/useGetPopularVideo";
 import useTopRatedVideos from "../hooks/useTopRatedVideos";
+import GptSearch from "./GptSearch";
+import { useSelector } from "react-redux";
 
 const Browse = () => {
   // const dispatch = useDispatch()
@@ -23,17 +25,24 @@ const Browse = () => {
   // useEffect(() => {
   //   getMoviesList();
   // }, []);
+  const status = useSelector((store) => store.gpt.gptViewSearch);
 
-  useNowPlayingMovies()
-  useGetPopularVideo()
-  useTopRatedVideos()
+  useNowPlayingMovies();
+  useGetPopularVideo();
+  useTopRatedVideos();
 
   return (
-    <div >
+    <div>
       {/* <h1>brose</h1> */}
       <Header />
-      <MainContainer/>
-      <SecondaryContainer/>
+      {status ? (
+        <GptSearch />
+      ) : (
+        <>
+          <MainContainer />
+          <SecondaryContainer />
+        </>
+      )}
     </div>
   );
 };
