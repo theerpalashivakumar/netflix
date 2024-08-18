@@ -112,9 +112,9 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img src={Logo} alt="logo" />
+        <img src={Logo} alt="logo"  className="h-screen object-cover w-screen"/>
       </div>
-      <div className="bg-black relative p-10  m-auto left-0 right-20 center top-28   w-1/4 bg-opacity-60 ">
+      <div className="bg-black relative p-10  m-auto left-0 right-20 center top-28   md:w-1/4 bg-opacity-60 ">
         <form
           action="#"
           className="flex justify-center flex-col"

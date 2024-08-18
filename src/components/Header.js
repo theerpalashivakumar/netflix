@@ -64,10 +64,10 @@ const Header = () => {
   }
 
   return (
-    <div className="absolute z-40 bg-gradient-to-b from-black w-full flex justify-between   items-center px-5 py-2 ">
+    <div className=" absolute z-40 bg-gradient-to-r from-black w-full  flex flex-col justify-center items-center md:justify-between md:items-center px-0 py-0 md:px-5 md:py-2 md:flex-row ">
       <img src={logo} alt="headLogo" className="h-12 w-24 " />
       {user && (
-        <div className=" flex items-center">
+        <div className=" flex items-start md:items-center">
          {status &&<select className="p-2 rounded-md mr-2" onChange={handleLanguageChangeSetting}>
            
            {languageSet.map(language => <option key={language.identifier} value={language.identifier}> {language.name}</option>)}
@@ -79,13 +79,13 @@ const Header = () => {
               {status?"Home" :"GPT Search"}
             </button>
           </div>
-          <div className="flex">
+          <div className="flex  ">
             <img
               src={user?.photoURL}
               alt="image"
               className="h-8 w-10 rounded-3xl"
             />
-            <button onClick={HandleSingOut} className="text-white ml-2">
+            <button onClick={HandleSingOut} className="text-white  md:ml-2  ">
               {user?.displayName} LogOut
             </button>
           </div>

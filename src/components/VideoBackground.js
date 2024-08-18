@@ -20,7 +20,7 @@ const VideoBackground = ({ movieId }) => {
   const videoUrl = `https://www.youtube.com/embed/${video?.key}?autoplay=1&mute=1`;
 
   return (
-    <div className="w-screen aspect-video ">
+    <div className="w-screen aspect-video  ">
       <iframe
       //it is set to aspect ration for video
       className="w-screen aspect-video"
