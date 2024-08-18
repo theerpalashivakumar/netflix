@@ -2,6 +2,7 @@ import React from 'react'
 import { IMAGE_CDN_URL } from '../utils/consonent'
 
 const MovieCard = ({posterPath}) => {
+  if(!posterPath) return null
   return (
 
       <div className='w-24 mr-3'>

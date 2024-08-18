@@ -41,6 +41,7 @@ const useGetVideo = (movieId) => {
   };
   useEffect(() => {
     if (movieId) {
+      !video &&
       getMovieVideo();
     }
   }, []);
